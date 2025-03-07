@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { Navbar, Container, Nav, Stack } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../context/AuthContext'
+import Notification from './chat/Notification'
 
 const NavBar = () => {
     const { user, logOutUser } = useContext(AuthContext)
@@ -13,19 +14,22 @@ const NavBar = () => {
                         Chat App
                     </Link>
                 </Navbar.Brand>
-                <span className='text-warning'>Logged in as {user?.name}</span>
+                {user && <span className='text-warning'>Logged in as {user?.name}</span>}
                 <Nav>
                     <Stack gap={2} direction='horizontal'>
                         {user ?
-                            <Link to="/login" onClick={logOutUser} className='text-decoration-none text-white'>
-                                Logout
-                            </Link>
+                            <>
+                                <Notification />
+                                <Link to="/login" onClick={logOutUser} className='text-decoration-none text-white bg-success px-2 py-1 rounded-pill'>
+                                    Logout
+                                </Link>
+                            </>
                             :
                             <>
-                                <Link to="/login" className='text-decoration-none text-white'>
+                                <Link to="/login" className='text-decoration-none text-white bg-success px-2 py-1 rounded-pill'>
                                     Login
                                 </Link>
-                                <Link to="/register" className='text-decoration-none text-white'>
+                                <Link to="/register" className='text-decoration-none text-white bg-success px-2 py-1 rounded-pill'>
                                     Register
                                 </Link>
                             </>

@@ -1,0 +1,23 @@
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #000000;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00bd9b;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #092349;
+}
+
+body {
+    color: white;
+    font-family: "Nunito", sans-serif;
+    background-color:rgb(40, 40, 40);
+  }

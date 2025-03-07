@@ -4,7 +4,6 @@ import { AuthContext } from '../context/AuthContext'
 
 const Register = () => {
     const { registerInfo, updateRegisterInfo, registerUser, isRegisterLoading, registerError } = useContext(AuthContext)
-    console.log("registerInfo", registerError)
     return (
         <>
             <Form onSubmit={registerUser}>
@@ -27,7 +26,7 @@ const Register = () => {
                                 placeholder='Enter password'
                                 value={registerInfo.password}
                                 onChange={(e) => updateRegisterInfo({ ...registerInfo, password: e.target.value })} />
-                            <Button type='submit'>
+                            <Button type='submit' className='bg-success text-white'>
                                 {isRegisterLoading ? 'Creating your account...' : 'Register'}
                             </Button>
                             {registerError && (

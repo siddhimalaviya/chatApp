@@ -14,7 +14,7 @@ const Login = () => {
                             <h1 className='text-center'>Login</h1>
                             <Form.Control type='email' placeholder='Enter email' value={loginInfo.email} onChange={(e) => updateLoginInfo({ ...loginInfo, email: e.target.value })} />
                             <Form.Control type='password' placeholder='Enter password' value={loginInfo.password} onChange={(e) => updateLoginInfo({ ...loginInfo, password: e.target.value })} />
-                            <Button type='submit'>
+                            <Button type='submit' className='bg-success text-white'>
                                 {isLoggingLoading ? 'Getting you in...' : 'Login'}
                             </Button >
                             {loginError && <Alert variant='danger'><p>{loginError}</p></Alert>}
